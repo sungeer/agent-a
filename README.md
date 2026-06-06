@@ -1,4 +1,4 @@
-# lioness
+# agent-a
 
 *An agent tool that lives in your terminal.*
 
@@ -6,8 +6,8 @@
 
 clone:
 ```
-$ git clone git@github.com:sungeer/lioness.git
-$ cd lioness
+$ git clone git@github.com:sungeer/agent-a.git
+$ cd agent-a
 ```
 create & activate virtual env then install dependency:
 
@@ -19,8 +19,7 @@ $ pip install -r requirements.txt
 ```
 then run:
 ```
-$ uvicorn app:app --port 8848
-* Running on http://127.0.0.1:8848/
+$ python -m src
 ```
 
 ## License

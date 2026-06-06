@@ -10,8 +10,8 @@ def main() -> None:
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     )
 
-    print(f'* API Usage Billing')
-    print(f'* /help /clear /quit /exit')
+    print(f'* An agentic tool that lives in your terminal.')
+    print(f'* Press /exit to quit')
 
     while True:
         try:

@@ -15,16 +15,19 @@ class AgentDecision(BaseModel):
     city: str = Field(default='', description='查天气时的城市名')
 
 
-SYSTEM_PROMPT = '你是一个智能助手。当用户问你问题时，判断是直接回答，还是需要查天气。'
-
-structured_llm = llm.with_structured_output(AgentDecision, method='function_calling')
-
-
 def run_agent(user_input: str) -> AgentDecision:
+    prompt = '你是一个智能助手。当用户问你问题时，判断是直接回答，还是需要查天气。'
+
     messages = [
-        SystemMessage(content=SYSTEM_PROMPT),
+        SystemMessage(content=prompt),
         HumanMessage(content=user_input),
     ]
+
+    structured_llm = llm.with_structured_output(
+        AgentDecision,
+        method='function_calling'
+    )
+
     decision = structured_llm.invoke(messages)
 
     log.info(f'[AI 决策]: {decision}')
